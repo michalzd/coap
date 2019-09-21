@@ -16,11 +16,10 @@
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
 #include "client.h"
-#include <stdint.h>
 
 
 int coap_client( char * serveraddr, uint16_t serverport)
 {
-    
+    printf("connect to %s, port %i\n", serveraddr, serverport );
     return 0;
 }

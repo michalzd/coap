@@ -22,6 +22,7 @@
  *
  * Created on 10 sierpnia 2019, 20:38
  */
+#include <stdint.h>
 
 #ifndef SERVER_H
 #define SERVER_H
@@ -30,7 +31,7 @@
 extern "C" {
 #endif
 
-
+int coap_server(uint16_t serverport);
 
 
 #ifdef __cplusplus

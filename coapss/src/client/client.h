@@ -22,6 +22,7 @@
  *
  * Created on 10 sierpnia 2019, 20:38
  */
+#include <stdint.h>
 
 #ifndef CLIENT_H
 #define CLIENT_H
@@ -30,7 +31,7 @@
 extern "C" {
 #endif
 
-
+int coap_client( char * serveraddr, uint16_t serverport);
 
 
 #ifdef __cplusplus

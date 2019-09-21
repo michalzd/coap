@@ -67,17 +67,17 @@ ${CND_DISTDIR}/${CND_CONF}/coapss: ${OBJECTFILES}
 ${OBJECTDIR}/src/client/client.o: src/client/client.c
 	${MKDIR} -p ${OBJECTDIR}/src/client
 	${RM} "$@.d"
-	$(COMPILE.c) -g -Isrc/client -Isrc/server -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/client/client.o src/client/client.c
+	$(COMPILE.c) -g -Isrc/client -Isrc/server -std=c11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/client/client.o src/client/client.c
 
 ${OBJECTDIR}/src/main.o: src/main.c
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.c) -g -Isrc/client -Isrc/server -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/main.o src/main.c
+	$(COMPILE.c) -g -Isrc/client -Isrc/server -std=c11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/main.o src/main.c
 
 ${OBJECTDIR}/src/server/server.o: src/server/server.c
 	${MKDIR} -p ${OBJECTDIR}/src/server
 	${RM} "$@.d"
-	$(COMPILE.c) -g -Isrc/client -Isrc/server -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/server/server.o src/server/server.c
+	$(COMPILE.c) -g -Isrc/client -Isrc/server -std=c11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/server/server.o src/server/server.c
 
 # Subprojects
 .build-subprojects:
