@@ -16,6 +16,9 @@
         <itemPath>src/client/client.c</itemPath>
         <itemPath>src/client/client.h</itemPath>
       </logicalFolder>
+      <logicalFolder name="coap" displayName="coap" projectFiles="true">
+        <itemPath>src/coap/coap.h</itemPath>
+      </logicalFolder>
       <logicalFolder name="f2" displayName="server" projectFiles="true">
         <itemPath>src/server/server.c</itemPath>
         <itemPath>src/server/server.h</itemPath>
@@ -36,6 +39,7 @@
   </logicalFolder>
   <sourceRootList>
     <Elem>src/client</Elem>
+    <Elem>src/coap</Elem>
   </sourceRootList>
   <projectmakefile>coapss-Makefile.mk</projectmakefile>
   <confs>
@@ -64,6 +68,8 @@
       <item path="src/client/client.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="src/client/client.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/coap/coap.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/main.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -95,6 +101,8 @@
       <item path="src/client/client.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="src/client/client.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/coap/coap.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/main.c" ex="false" tool="0" flavor2="0">
       </item>

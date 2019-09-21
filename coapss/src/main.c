@@ -45,7 +45,7 @@
  * 
  * uruchomienie klienta   coapss -c [ server_addr:serverport | server_addr ]
  * uruchomienie servera   coapss -s [ server_addr:serverport | server_addr ]
- * default serverport 1818                                
+ * default serverport 5683                                
  */
 uint16_t  sport;
 
@@ -89,8 +89,8 @@ int main(int argc, char**argv) {
         return 0;
     }
     
-    /* default port 1818 */
-    sport = 1818;
+    /* default port 5683 */
+    sport = 5683;
     mode = 's';
     while ((opt = getopt(argc, argv, "s::c::")) != -1) 
     {

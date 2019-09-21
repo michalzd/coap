@@ -25,7 +25,8 @@
 #include <signal.h>
 #include "server.h" 
 
-#define MAXLINE 255
+#define MAXLINE 512
+static char buffer[MAXLINE]; 
 
 static int sockfd;
 static int coap_listen(void);
@@ -71,21 +72,24 @@ int coap_server(uint16_t serverport)
 int coap_listen(void)
 {
     struct sockaddr_in cliaddr;
-    char buffer[MAXLINE]; 
     char *hello = "Hello from server";
     
     int len, n; 
     
-    n = recvfrom(sockfd, (char *)buffer, MAXLINE,  
-                MSG_WAITALL, ( struct sockaddr *) &cliaddr, 
-                &len); 
-    buffer[n] = '\0'; 
-    printf("Client : %s\n", buffer); 
-    sendto(sockfd, (const char *)hello, strlen(hello),  
-        MSG_CONFIRM, (const struct sockaddr *) &cliaddr, 
-            len); 
-    printf("Hello message sent.\n");
-    
+    while(1)
+    {
+        n = recvfrom(sockfd, (char *)buffer, MAXLINE,  
+                    MSG_WAITALL, ( struct sockaddr *) &cliaddr, 
+                    &len); 
+        buffer[n] = '\0'; 
+        if(n<0) break;
+        
+        printf("Client : %i  %s\n", n, buffer); 
+        sendto(sockfd, (const char *)hello, strlen(hello),  
+            MSG_CONFIRM, (const struct sockaddr *) &cliaddr, 
+                len); 
+        printf("Hello message sent.\n");
+    }
     return(0);
 }
 
