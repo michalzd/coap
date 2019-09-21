@@ -65,7 +65,6 @@ int mode_client(char  *srvparam)
         }
     }
     if(sport) coap_client(srvparam, sport);
-    
     return 0;
 }
 
